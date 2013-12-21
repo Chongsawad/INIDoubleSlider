@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "INIRange.h"
 
 @interface INIDoubleSlider : UIControl
 
@@ -16,4 +17,11 @@
 @property (nonatomic, assign) CGFloat minValue;
 @property (nonatomic, assign) CGFloat maxValue;
 
+@property (nonatomic, strong) NSArray *ranges;
+
+@end
+
+@interface INIDoubleSlider (RepresentedValue)
+- (id)minRepresentedValue;
+- (id)maxRepresentedValue;
 @end

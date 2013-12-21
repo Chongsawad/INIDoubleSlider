@@ -1,1150 +1,546 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-	<key>archiveVersion</key>
-	<string>1</string>
-	<key>classes</key>
-	<dict/>
-	<key>objectVersion</key>
-	<string>46</string>
-	<key>objects</key>
-	<dict>
-		<key>05933997BACB416BBF1C66A5</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>Copy Pods Resources</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>"${SRCROOT}/Pods/Pods-INIDoubleSlider-resources.sh"
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>16AF097D992241E5ABB55690</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>name</key>
-			<string>Pods-INIDoubleSlider.xcconfig</string>
-			<key>path</key>
-			<string>Pods/Pods-INIDoubleSlider.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>2ED0AD11FB134857930E9F83</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>archive.ar</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>libPods-INIDoubleSlider.a</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>8035133B08614409990CEB41</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>Check Pods Manifest.lock</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>diff "${PODS_ROOT}/../Podfile.lock" "${PODS_ROOT}/Manifest.lock" &gt; /dev/null
-if [[ $? != 0 ]] ; then
-    cat &lt;&lt; EOM
-error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.
-EOM
-    exit 1
-fi
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>C64BC829B0A441B7AFD817FE</key>
-		<dict>
-			<key>fileRef</key>
-			<string>2ED0AD11FB134857930E9F83</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>CE6BEC621865711C00E7226E</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>CE6BEC741865711C00E7226E</string>
-				<string>CE6BEC8D1865711D00E7226E</string>
-				<string>CE6BEC6D1865711C00E7226E</string>
-				<string>CE6BEC6C1865711C00E7226E</string>
-				<string>16AF097D992241E5ABB55690</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CE6BEC631865711C00E7226E</key>
-		<dict>
-			<key>attributes</key>
-			<dict>
-				<key>CLASSPREFIX</key>
-				<string>INI</string>
-				<key>LastUpgradeCheck</key>
-				<string>0500</string>
-				<key>ORGANIZATIONNAME</key>
-				<string>Chongsawad</string>
-				<key>TargetAttributes</key>
-				<dict>
-					<key>CE6BEC851865711D00E7226E</key>
-					<dict>
-						<key>TestTargetID</key>
-						<string>CE6BEC6A1865711C00E7226E</string>
-					</dict>
-				</dict>
-			</dict>
-			<key>buildConfigurationList</key>
-			<string>CE6BEC661865711C00E7226E</string>
-			<key>compatibilityVersion</key>
-			<string>Xcode 3.2</string>
-			<key>developmentRegion</key>
-			<string>English</string>
-			<key>hasScannedForEncodings</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXProject</string>
-			<key>knownRegions</key>
-			<array>
-				<string>en</string>
-			</array>
-			<key>mainGroup</key>
-			<string>CE6BEC621865711C00E7226E</string>
-			<key>productRefGroup</key>
-			<string>CE6BEC6C1865711C00E7226E</string>
-			<key>projectDirPath</key>
-			<string></string>
-			<key>projectReferences</key>
-			<array/>
-			<key>projectRoot</key>
-			<string></string>
-			<key>targets</key>
-			<array>
-				<string>CE6BEC6A1865711C00E7226E</string>
-				<string>CE6BEC851865711D00E7226E</string>
-			</array>
-		</dict>
-		<key>CE6BEC661865711C00E7226E</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>CE6BEC951865711D00E7226E</string>
-				<string>CE6BEC961865711D00E7226E</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>CE6BEC671865711C00E7226E</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>CE6BEC9F1865719700E7226E</string>
-				<string>CE6BECA41865721B00E7226E</string>
-				<string>CE6BEC7B1865711D00E7226E</string>
-				<string>CE6BEC7F1865711D00E7226E</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>CE6BEC681865711C00E7226E</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>CE6BEC711865711C00E7226E</string>
-				<string>CE6BEC731865711C00E7226E</string>
-				<string>CE6BEC6F1865711C00E7226E</string>
-				<string>C64BC829B0A441B7AFD817FE</string>
-			</array>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>CE6BEC691865711C00E7226E</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>CE6BEC791865711C00E7226E</string>
-				<string>CE6BECA51865721B00E7226E</string>
-				<string>CE6BEC811865711D00E7226E</string>
-			</array>
-			<key>isa</key>
-			<string>PBXResourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>CE6BEC6A1865711C00E7226E</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>CE6BEC971865711D00E7226E</string>
-			<key>buildPhases</key>
-			<array>
-				<string>8035133B08614409990CEB41</string>
-				<string>CE6BEC671865711C00E7226E</string>
-				<string>CE6BEC681865711C00E7226E</string>
-				<string>CE6BEC691865711C00E7226E</string>
-				<string>05933997BACB416BBF1C66A5</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>INIDoubleSlider</string>
-			<key>productName</key>
-			<string>INIDoubleSlider</string>
-			<key>productReference</key>
-			<string>CE6BEC6B1865711C00E7226E</string>
-			<key>productType</key>
-			<string>com.apple.product-type.application</string>
-		</dict>
-		<key>CE6BEC6B1865711C00E7226E</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.application</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>INIDoubleSlider.app</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>CE6BEC6C1865711C00E7226E</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>CE6BEC6B1865711C00E7226E</string>
-				<string>CE6BEC861865711D00E7226E</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Products</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CE6BEC6D1865711C00E7226E</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>CE6BEC6E1865711C00E7226E</string>
-				<string>CE6BEC701865711C00E7226E</string>
-				<string>CE6BEC721865711C00E7226E</string>
-				<string>CE6BEC871865711D00E7226E</string>
-				<string>2ED0AD11FB134857930E9F83</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Frameworks</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CE6BEC6E1865711C00E7226E</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>Foundation.framework</string>
-			<key>path</key>
-			<string>System/Library/Frameworks/Foundation.framework</string>
-			<key>sourceTree</key>
-			<string>SDKROOT</string>
-		</dict>
-		<key>CE6BEC6F1865711C00E7226E</key>
-		<dict>
-			<key>fileRef</key>
-			<string>CE6BEC6E1865711C00E7226E</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>CE6BEC701865711C00E7226E</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>CoreGraphics.framework</string>
-			<key>path</key>
-			<string>System/Library/Frameworks/CoreGraphics.framework</string>
-			<key>sourceTree</key>
-			<string>SDKROOT</string>
-		</dict>
-		<key>CE6BEC711865711C00E7226E</key>
-		<dict>
-			<key>fileRef</key>
-			<string>CE6BEC701865711C00E7226E</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>CE6BEC721865711C00E7226E</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>UIKit.framework</string>
-			<key>path</key>
-			<string>System/Library/Frameworks/UIKit.framework</string>
-			<key>sourceTree</key>
-			<string>SDKROOT</string>
-		</dict>
-		<key>CE6BEC731865711C00E7226E</key>
-		<dict>
-			<key>fileRef</key>
-			<string>CE6BEC721865711C00E7226E</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>CE6BEC741865711C00E7226E</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>CE6BEC7D1865711D00E7226E</string>
-				<string>CE6BEC7E1865711D00E7226E</string>
-				<string>CE6BECA61865722600E7226E</string>
-				<string>CE6BECA01865719B00E7226E</string>
-				<string>CE6BEC801865711D00E7226E</string>
-				<string>CE6BEC751865711C00E7226E</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>INIDoubleSlider</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CE6BEC751865711C00E7226E</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>CE6BEC761865711C00E7226E</string>
-				<string>CE6BEC771865711C00E7226E</string>
-				<string>CE6BEC7A1865711D00E7226E</string>
-				<string>CE6BEC7C1865711D00E7226E</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Supporting Files</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CE6BEC761865711C00E7226E</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>INIDoubleSlider-Info.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CE6BEC771865711C00E7226E</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>CE6BEC781865711C00E7226E</string>
-			</array>
-			<key>isa</key>
-			<string>PBXVariantGroup</string>
-			<key>name</key>
-			<string>InfoPlist.strings</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CE6BEC781865711C00E7226E</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.strings</string>
-			<key>name</key>
-			<string>en</string>
-			<key>path</key>
-			<string>en.lproj/InfoPlist.strings</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CE6BEC791865711C00E7226E</key>
-		<dict>
-			<key>fileRef</key>
-			<string>CE6BEC771865711C00E7226E</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>CE6BEC7A1865711D00E7226E</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>main.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CE6BEC7B1865711D00E7226E</key>
-		<dict>
-			<key>fileRef</key>
-			<string>CE6BEC7A1865711D00E7226E</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>CE6BEC7C1865711D00E7226E</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>INIDoubleSlider-Prefix.pch</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CE6BEC7D1865711D00E7226E</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>INIAppDelegate.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CE6BEC7E1865711D00E7226E</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>INIAppDelegate.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CE6BEC7F1865711D00E7226E</key>
-		<dict>
-			<key>fileRef</key>
-			<string>CE6BEC7E1865711D00E7226E</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>CE6BEC801865711D00E7226E</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>folder.assetcatalog</string>
-			<key>path</key>
-			<string>Images.xcassets</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CE6BEC811865711D00E7226E</key>
-		<dict>
-			<key>fileRef</key>
-			<string>CE6BEC801865711D00E7226E</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>CE6BEC821865711D00E7226E</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>CE6BEC941865711D00E7226E</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>CE6BEC831865711D00E7226E</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>CE6BEC881865711D00E7226E</string>
-				<string>CE6BEC8A1865711D00E7226E</string>
-				<string>CE6BEC891865711D00E7226E</string>
-			</array>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>CE6BEC841865711D00E7226E</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>CE6BEC921865711D00E7226E</string>
-			</array>
-			<key>isa</key>
-			<string>PBXResourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>CE6BEC851865711D00E7226E</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>CE6BEC9A1865711D00E7226E</string>
-			<key>buildPhases</key>
-			<array>
-				<string>CE6BEC821865711D00E7226E</string>
-				<string>CE6BEC831865711D00E7226E</string>
-				<string>CE6BEC841865711D00E7226E</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array>
-				<string>CE6BEC8C1865711D00E7226E</string>
-			</array>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>INIDoubleSliderTests</string>
-			<key>productName</key>
-			<string>INIDoubleSliderTests</string>
-			<key>productReference</key>
-			<string>CE6BEC861865711D00E7226E</string>
-			<key>productType</key>
-			<string>com.apple.product-type.bundle.unit-test</string>
-		</dict>
-		<key>CE6BEC861865711D00E7226E</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.cfbundle</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>INIDoubleSliderTests.xctest</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>CE6BEC871865711D00E7226E</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>XCTest.framework</string>
-			<key>path</key>
-			<string>Library/Frameworks/XCTest.framework</string>
-			<key>sourceTree</key>
-			<string>DEVELOPER_DIR</string>
-		</dict>
-		<key>CE6BEC881865711D00E7226E</key>
-		<dict>
-			<key>fileRef</key>
-			<string>CE6BEC871865711D00E7226E</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>CE6BEC891865711D00E7226E</key>
-		<dict>
-			<key>fileRef</key>
-			<string>CE6BEC6E1865711C00E7226E</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>CE6BEC8A1865711D00E7226E</key>
-		<dict>
-			<key>fileRef</key>
-			<string>CE6BEC721865711C00E7226E</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>CE6BEC8B1865711D00E7226E</key>
-		<dict>
-			<key>containerPortal</key>
-			<string>CE6BEC631865711C00E7226E</string>
-			<key>isa</key>
-			<string>PBXContainerItemProxy</string>
-			<key>proxyType</key>
-			<string>1</string>
-			<key>remoteGlobalIDString</key>
-			<string>CE6BEC6A1865711C00E7226E</string>
-			<key>remoteInfo</key>
-			<string>INIDoubleSlider</string>
-		</dict>
-		<key>CE6BEC8C1865711D00E7226E</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXTargetDependency</string>
-			<key>target</key>
-			<string>CE6BEC6A1865711C00E7226E</string>
-			<key>targetProxy</key>
-			<string>CE6BEC8B1865711D00E7226E</string>
-		</dict>
-		<key>CE6BEC8D1865711D00E7226E</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>CE6BEC931865711D00E7226E</string>
-				<string>CE6BEC8E1865711D00E7226E</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>INIDoubleSliderTests</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CE6BEC8E1865711D00E7226E</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>CE6BEC8F1865711D00E7226E</string>
-				<string>CE6BEC901865711D00E7226E</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Supporting Files</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CE6BEC8F1865711D00E7226E</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>INIDoubleSliderTests-Info.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CE6BEC901865711D00E7226E</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>CE6BEC911865711D00E7226E</string>
-			</array>
-			<key>isa</key>
-			<string>PBXVariantGroup</string>
-			<key>name</key>
-			<string>InfoPlist.strings</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CE6BEC911865711D00E7226E</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.strings</string>
-			<key>name</key>
-			<string>en</string>
-			<key>path</key>
-			<string>en.lproj/InfoPlist.strings</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CE6BEC921865711D00E7226E</key>
-		<dict>
-			<key>fileRef</key>
-			<string>CE6BEC901865711D00E7226E</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>CE6BEC931865711D00E7226E</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>INIDoubleSliderTests.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CE6BEC941865711D00E7226E</key>
-		<dict>
-			<key>fileRef</key>
-			<string>CE6BEC931865711D00E7226E</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>CE6BEC951865711D00E7226E</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>ARCHS</key>
-				<string>$(ARCHS_STANDARD_INCLUDING_64_BIT)</string>
-				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
-				<string>gnu++0x</string>
-				<key>CLANG_CXX_LIBRARY</key>
-				<string>libc++</string>
-				<key>CLANG_ENABLE_MODULES</key>
-				<string>YES</string>
-				<key>CLANG_ENABLE_OBJC_ARC</key>
-				<string>YES</string>
-				<key>CLANG_WARN_BOOL_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN_EMPTY_BODY</key>
-				<string>YES</string>
-				<key>CLANG_WARN_ENUM_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_INT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
-				<string>YES</string>
-				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
-				<string>iPhone Developer</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>NO</string>
-				<key>GCC_C_LANGUAGE_STANDARD</key>
-				<string>gnu99</string>
-				<key>GCC_DYNAMIC_NO_PIC</key>
-				<string>NO</string>
-				<key>GCC_OPTIMIZATION_LEVEL</key>
-				<string>0</string>
-				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
-				<array>
-					<string>DEBUG=1</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>GCC_SYMBOLS_PRIVATE_EXTERN</key>
-				<string>NO</string>
-				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
-				<string>YES</string>
-				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
-				<string>YES_ERROR</string>
-				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_FUNCTION</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_VARIABLE</key>
-				<string>YES</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>7.0</string>
-				<key>ONLY_ACTIVE_ARCH</key>
-				<string>YES</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>CE6BEC961865711D00E7226E</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>ARCHS</key>
-				<string>$(ARCHS_STANDARD_INCLUDING_64_BIT)</string>
-				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
-				<string>gnu++0x</string>
-				<key>CLANG_CXX_LIBRARY</key>
-				<string>libc++</string>
-				<key>CLANG_ENABLE_MODULES</key>
-				<string>YES</string>
-				<key>CLANG_ENABLE_OBJC_ARC</key>
-				<string>YES</string>
-				<key>CLANG_WARN_BOOL_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN_EMPTY_BODY</key>
-				<string>YES</string>
-				<key>CLANG_WARN_ENUM_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_INT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
-				<string>YES</string>
-				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
-				<string>iPhone Developer</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>YES</string>
-				<key>ENABLE_NS_ASSERTIONS</key>
-				<string>NO</string>
-				<key>GCC_C_LANGUAGE_STANDARD</key>
-				<string>gnu99</string>
-				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
-				<string>YES</string>
-				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
-				<string>YES_ERROR</string>
-				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_FUNCTION</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_VARIABLE</key>
-				<string>YES</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>7.0</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>VALIDATE_PRODUCT</key>
-				<string>YES</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>CE6BEC971865711D00E7226E</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>CE6BEC981865711D00E7226E</string>
-				<string>CE6BEC991865711D00E7226E</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>CE6BEC981865711D00E7226E</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>16AF097D992241E5ABB55690</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
-				<string>AppIcon</string>
-				<key>ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME</key>
-				<string>LaunchImage</string>
-				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
-				<string>YES</string>
-				<key>GCC_PREFIX_HEADER</key>
-				<string>INIDoubleSlider/INIDoubleSlider-Prefix.pch</string>
-				<key>INFOPLIST_FILE</key>
-				<string>INIDoubleSlider/INIDoubleSlider-Info.plist</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>WRAPPER_EXTENSION</key>
-				<string>app</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>CE6BEC991865711D00E7226E</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>16AF097D992241E5ABB55690</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
-				<string>AppIcon</string>
-				<key>ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME</key>
-				<string>LaunchImage</string>
-				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
-				<string>YES</string>
-				<key>GCC_PREFIX_HEADER</key>
-				<string>INIDoubleSlider/INIDoubleSlider-Prefix.pch</string>
-				<key>INFOPLIST_FILE</key>
-				<string>INIDoubleSlider/INIDoubleSlider-Info.plist</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>WRAPPER_EXTENSION</key>
-				<string>app</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>CE6BEC9A1865711D00E7226E</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>CE6BEC9B1865711D00E7226E</string>
-				<string>CE6BEC9C1865711D00E7226E</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>CE6BEC9B1865711D00E7226E</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>ARCHS</key>
-				<string>$(ARCHS_STANDARD_INCLUDING_64_BIT)</string>
-				<key>BUNDLE_LOADER</key>
-				<string>$(BUILT_PRODUCTS_DIR)/INIDoubleSlider.app/INIDoubleSlider</string>
-				<key>FRAMEWORK_SEARCH_PATHS</key>
-				<array>
-					<string>$(SDKROOT)/Developer/Library/Frameworks</string>
-					<string>$(inherited)</string>
-					<string>$(DEVELOPER_FRAMEWORKS_DIR)</string>
-				</array>
-				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
-				<string>YES</string>
-				<key>GCC_PREFIX_HEADER</key>
-				<string>INIDoubleSlider/INIDoubleSlider-Prefix.pch</string>
-				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
-				<array>
-					<string>DEBUG=1</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>INFOPLIST_FILE</key>
-				<string>INIDoubleSliderTests/INIDoubleSliderTests-Info.plist</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>TEST_HOST</key>
-				<string>$(BUNDLE_LOADER)</string>
-				<key>WRAPPER_EXTENSION</key>
-				<string>xctest</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>CE6BEC9C1865711D00E7226E</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>ARCHS</key>
-				<string>$(ARCHS_STANDARD_INCLUDING_64_BIT)</string>
-				<key>BUNDLE_LOADER</key>
-				<string>$(BUILT_PRODUCTS_DIR)/INIDoubleSlider.app/INIDoubleSlider</string>
-				<key>FRAMEWORK_SEARCH_PATHS</key>
-				<array>
-					<string>$(SDKROOT)/Developer/Library/Frameworks</string>
-					<string>$(inherited)</string>
-					<string>$(DEVELOPER_FRAMEWORKS_DIR)</string>
-				</array>
-				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
-				<string>YES</string>
-				<key>GCC_PREFIX_HEADER</key>
-				<string>INIDoubleSlider/INIDoubleSlider-Prefix.pch</string>
-				<key>INFOPLIST_FILE</key>
-				<string>INIDoubleSliderTests/INIDoubleSliderTests-Info.plist</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>TEST_HOST</key>
-				<string>$(BUNDLE_LOADER)</string>
-				<key>WRAPPER_EXTENSION</key>
-				<string>xctest</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>CE6BEC9D1865719700E7226E</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>INIDoubleSlider.h</string>
-			<key>path</key>
-			<string>Class/INIDoubleSlider.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CE6BEC9E1865719700E7226E</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>INIDoubleSlider.m</string>
-			<key>path</key>
-			<string>Class/INIDoubleSlider.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CE6BEC9F1865719700E7226E</key>
-		<dict>
-			<key>fileRef</key>
-			<string>CE6BEC9E1865719700E7226E</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>CE6BECA01865719B00E7226E</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>CE6BEC9D1865719700E7226E</string>
-				<string>CE6BEC9E1865719700E7226E</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Class</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CE6BECA11865721B00E7226E</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>INIViewController.h</string>
-			<key>path</key>
-			<string>Demo/INIViewController.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CE6BECA21865721B00E7226E</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>INIViewController.m</string>
-			<key>path</key>
-			<string>Demo/INIViewController.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CE6BECA31865721B00E7226E</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>file.xib</string>
-			<key>name</key>
-			<string>INIViewController.xib</string>
-			<key>path</key>
-			<string>Demo/INIViewController.xib</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CE6BECA41865721B00E7226E</key>
-		<dict>
-			<key>fileRef</key>
-			<string>CE6BECA21865721B00E7226E</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>CE6BECA51865721B00E7226E</key>
-		<dict>
-			<key>fileRef</key>
-			<string>CE6BECA31865721B00E7226E</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>CE6BECA61865722600E7226E</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>CE6BECA11865721B00E7226E</string>
-				<string>CE6BECA21865721B00E7226E</string>
-				<string>CE6BECA31865721B00E7226E</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Demo</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-	</dict>
-	<key>rootObject</key>
-	<string>CE6BEC631865711C00E7226E</string>
-</dict>
-</plist>
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C64BC829B0A441B7AFD817FE /* libPods-INIDoubleSlider.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2ED0AD11FB134857930E9F83 /* libPods-INIDoubleSlider.a */; };
+		CE6BEC6F1865711C00E7226E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE6BEC6E1865711C00E7226E /* Foundation.framework */; };
+		CE6BEC711865711C00E7226E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE6BEC701865711C00E7226E /* CoreGraphics.framework */; };
+		CE6BEC731865711C00E7226E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE6BEC721865711C00E7226E /* UIKit.framework */; };
+		CE6BEC791865711C00E7226E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CE6BEC771865711C00E7226E /* InfoPlist.strings */; };
+		CE6BEC7B1865711D00E7226E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CE6BEC7A1865711D00E7226E /* main.m */; };
+		CE6BEC7F1865711D00E7226E /* INIAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CE6BEC7E1865711D00E7226E /* INIAppDelegate.m */; };
+		CE6BEC811865711D00E7226E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE6BEC801865711D00E7226E /* Images.xcassets */; };
+		CE6BEC881865711D00E7226E /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE6BEC871865711D00E7226E /* XCTest.framework */; };
+		CE6BEC891865711D00E7226E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE6BEC6E1865711C00E7226E /* Foundation.framework */; };
+		CE6BEC8A1865711D00E7226E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE6BEC721865711C00E7226E /* UIKit.framework */; };
+		CE6BEC921865711D00E7226E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CE6BEC901865711D00E7226E /* InfoPlist.strings */; };
+		CE6BEC941865711D00E7226E /* INIDoubleSliderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CE6BEC931865711D00E7226E /* INIDoubleSliderTests.m */; };
+		CE6BEC9F1865719700E7226E /* INIDoubleSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = CE6BEC9E1865719700E7226E /* INIDoubleSlider.m */; };
+		CE6BECA41865721B00E7226E /* INIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE6BECA21865721B00E7226E /* INIViewController.m */; };
+		CE6BECA51865721B00E7226E /* INIViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE6BECA31865721B00E7226E /* INIViewController.xib */; };
+		CE6BECA91865ADB800E7226E /* INIRange.m in Sources */ = {isa = PBXBuildFile; fileRef = CE6BECA81865ADB800E7226E /* INIRange.m */; };
+		CE6BECAC1865AF5E00E7226E /* INIRangeView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE6BECAB1865AF5E00E7226E /* INIRangeView.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CE6BEC8B1865711D00E7226E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CE6BEC631865711C00E7226E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CE6BEC6A1865711C00E7226E;
+			remoteInfo = INIDoubleSlider;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		16AF097D992241E5ABB55690 /* Pods-INIDoubleSlider.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-INIDoubleSlider.xcconfig"; path = "Pods/Pods-INIDoubleSlider.xcconfig"; sourceTree = "<group>"; };
+		2ED0AD11FB134857930E9F83 /* libPods-INIDoubleSlider.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-INIDoubleSlider.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE6BEC6B1865711C00E7226E /* INIDoubleSlider.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = INIDoubleSlider.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE6BEC6E1865711C00E7226E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		CE6BEC701865711C00E7226E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		CE6BEC721865711C00E7226E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		CE6BEC761865711C00E7226E /* INIDoubleSlider-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "INIDoubleSlider-Info.plist"; sourceTree = "<group>"; };
+		CE6BEC781865711C00E7226E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		CE6BEC7A1865711D00E7226E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		CE6BEC7C1865711D00E7226E /* INIDoubleSlider-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "INIDoubleSlider-Prefix.pch"; sourceTree = "<group>"; };
+		CE6BEC7D1865711D00E7226E /* INIAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = INIAppDelegate.h; sourceTree = "<group>"; };
+		CE6BEC7E1865711D00E7226E /* INIAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = INIAppDelegate.m; sourceTree = "<group>"; };
+		CE6BEC801865711D00E7226E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		CE6BEC861865711D00E7226E /* INIDoubleSliderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = INIDoubleSliderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE6BEC871865711D00E7226E /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		CE6BEC8F1865711D00E7226E /* INIDoubleSliderTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "INIDoubleSliderTests-Info.plist"; sourceTree = "<group>"; };
+		CE6BEC911865711D00E7226E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		CE6BEC931865711D00E7226E /* INIDoubleSliderTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = INIDoubleSliderTests.m; sourceTree = "<group>"; };
+		CE6BEC9D1865719700E7226E /* INIDoubleSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = INIDoubleSlider.h; path = Class/INIDoubleSlider.h; sourceTree = "<group>"; };
+		CE6BEC9E1865719700E7226E /* INIDoubleSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = INIDoubleSlider.m; path = Class/INIDoubleSlider.m; sourceTree = "<group>"; };
+		CE6BECA11865721B00E7226E /* INIViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = INIViewController.h; path = Demo/INIViewController.h; sourceTree = "<group>"; };
+		CE6BECA21865721B00E7226E /* INIViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = INIViewController.m; path = Demo/INIViewController.m; sourceTree = "<group>"; };
+		CE6BECA31865721B00E7226E /* INIViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = INIViewController.xib; path = Demo/INIViewController.xib; sourceTree = "<group>"; };
+		CE6BECA71865ADB800E7226E /* INIRange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = INIRange.h; path = Class/INIRange.h; sourceTree = "<group>"; };
+		CE6BECA81865ADB800E7226E /* INIRange.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = INIRange.m; path = Class/INIRange.m; sourceTree = "<group>"; };
+		CE6BECAA1865AF5E00E7226E /* INIRangeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = INIRangeView.h; path = Class/INIRangeView.h; sourceTree = "<group>"; };
+		CE6BECAB1865AF5E00E7226E /* INIRangeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = INIRangeView.m; path = Class/INIRangeView.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CE6BEC681865711C00E7226E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE6BEC711865711C00E7226E /* CoreGraphics.framework in Frameworks */,
+				CE6BEC731865711C00E7226E /* UIKit.framework in Frameworks */,
+				CE6BEC6F1865711C00E7226E /* Foundation.framework in Frameworks */,
+				C64BC829B0A441B7AFD817FE /* libPods-INIDoubleSlider.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CE6BEC831865711D00E7226E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE6BEC881865711D00E7226E /* XCTest.framework in Frameworks */,
+				CE6BEC8A1865711D00E7226E /* UIKit.framework in Frameworks */,
+				CE6BEC891865711D00E7226E /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CE6BEC621865711C00E7226E = {
+			isa = PBXGroup;
+			children = (
+				CE6BEC741865711C00E7226E /* INIDoubleSlider */,
+				CE6BEC8D1865711D00E7226E /* INIDoubleSliderTests */,
+				CE6BEC6D1865711C00E7226E /* Frameworks */,
+				CE6BEC6C1865711C00E7226E /* Products */,
+				16AF097D992241E5ABB55690 /* Pods-INIDoubleSlider.xcconfig */,
+			);
+			sourceTree = "<group>";
+		};
+		CE6BEC6C1865711C00E7226E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CE6BEC6B1865711C00E7226E /* INIDoubleSlider.app */,
+				CE6BEC861865711D00E7226E /* INIDoubleSliderTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CE6BEC6D1865711C00E7226E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CE6BEC6E1865711C00E7226E /* Foundation.framework */,
+				CE6BEC701865711C00E7226E /* CoreGraphics.framework */,
+				CE6BEC721865711C00E7226E /* UIKit.framework */,
+				CE6BEC871865711D00E7226E /* XCTest.framework */,
+				2ED0AD11FB134857930E9F83 /* libPods-INIDoubleSlider.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CE6BEC741865711C00E7226E /* INIDoubleSlider */ = {
+			isa = PBXGroup;
+			children = (
+				CE6BEC7D1865711D00E7226E /* INIAppDelegate.h */,
+				CE6BEC7E1865711D00E7226E /* INIAppDelegate.m */,
+				CE6BECA61865722600E7226E /* Demo */,
+				CE6BECA01865719B00E7226E /* Class */,
+				CE6BEC801865711D00E7226E /* Images.xcassets */,
+				CE6BEC751865711C00E7226E /* Supporting Files */,
+			);
+			path = INIDoubleSlider;
+			sourceTree = "<group>";
+		};
+		CE6BEC751865711C00E7226E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CE6BEC761865711C00E7226E /* INIDoubleSlider-Info.plist */,
+				CE6BEC771865711C00E7226E /* InfoPlist.strings */,
+				CE6BEC7A1865711D00E7226E /* main.m */,
+				CE6BEC7C1865711D00E7226E /* INIDoubleSlider-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CE6BEC8D1865711D00E7226E /* INIDoubleSliderTests */ = {
+			isa = PBXGroup;
+			children = (
+				CE6BEC931865711D00E7226E /* INIDoubleSliderTests.m */,
+				CE6BEC8E1865711D00E7226E /* Supporting Files */,
+			);
+			path = INIDoubleSliderTests;
+			sourceTree = "<group>";
+		};
+		CE6BEC8E1865711D00E7226E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CE6BEC8F1865711D00E7226E /* INIDoubleSliderTests-Info.plist */,
+				CE6BEC901865711D00E7226E /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CE6BECA01865719B00E7226E /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				CE6BEC9D1865719700E7226E /* INIDoubleSlider.h */,
+				CE6BEC9E1865719700E7226E /* INIDoubleSlider.m */,
+				CE6BECA71865ADB800E7226E /* INIRange.h */,
+				CE6BECA81865ADB800E7226E /* INIRange.m */,
+				CE6BECAA1865AF5E00E7226E /* INIRangeView.h */,
+				CE6BECAB1865AF5E00E7226E /* INIRangeView.m */,
+			);
+			name = Class;
+			sourceTree = "<group>";
+		};
+		CE6BECA61865722600E7226E /* Demo */ = {
+			isa = PBXGroup;
+			children = (
+				CE6BECA11865721B00E7226E /* INIViewController.h */,
+				CE6BECA21865721B00E7226E /* INIViewController.m */,
+				CE6BECA31865721B00E7226E /* INIViewController.xib */,
+			);
+			name = Demo;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CE6BEC6A1865711C00E7226E /* INIDoubleSlider */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CE6BEC971865711D00E7226E /* Build configuration list for PBXNativeTarget "INIDoubleSlider" */;
+			buildPhases = (
+				8035133B08614409990CEB41 /* Check Pods Manifest.lock */,
+				CE6BEC671865711C00E7226E /* Sources */,
+				CE6BEC681865711C00E7226E /* Frameworks */,
+				CE6BEC691865711C00E7226E /* Resources */,
+				05933997BACB416BBF1C66A5 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = INIDoubleSlider;
+			productName = INIDoubleSlider;
+			productReference = CE6BEC6B1865711C00E7226E /* INIDoubleSlider.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CE6BEC851865711D00E7226E /* INIDoubleSliderTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CE6BEC9A1865711D00E7226E /* Build configuration list for PBXNativeTarget "INIDoubleSliderTests" */;
+			buildPhases = (
+				CE6BEC821865711D00E7226E /* Sources */,
+				CE6BEC831865711D00E7226E /* Frameworks */,
+				CE6BEC841865711D00E7226E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CE6BEC8C1865711D00E7226E /* PBXTargetDependency */,
+			);
+			name = INIDoubleSliderTests;
+			productName = INIDoubleSliderTests;
+			productReference = CE6BEC861865711D00E7226E /* INIDoubleSliderTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CE6BEC631865711C00E7226E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = INI;
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = Chongsawad;
+				TargetAttributes = {
+					CE6BEC851865711D00E7226E = {
+						TestTargetID = CE6BEC6A1865711C00E7226E;
+					};
+				};
+			};
+			buildConfigurationList = CE6BEC661865711C00E7226E /* Build configuration list for PBXProject "INIDoubleSlider" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = CE6BEC621865711C00E7226E;
+			productRefGroup = CE6BEC6C1865711C00E7226E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CE6BEC6A1865711C00E7226E /* INIDoubleSlider */,
+				CE6BEC851865711D00E7226E /* INIDoubleSliderTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CE6BEC691865711C00E7226E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE6BEC791865711C00E7226E /* InfoPlist.strings in Resources */,
+				CE6BECA51865721B00E7226E /* INIViewController.xib in Resources */,
+				CE6BEC811865711D00E7226E /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CE6BEC841865711D00E7226E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE6BEC921865711D00E7226E /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		05933997BACB416BBF1C66A5 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-INIDoubleSlider-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8035133B08614409990CEB41 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CE6BEC671865711C00E7226E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE6BEC9F1865719700E7226E /* INIDoubleSlider.m in Sources */,
+				CE6BECA41865721B00E7226E /* INIViewController.m in Sources */,
+				CE6BEC7B1865711D00E7226E /* main.m in Sources */,
+				CE6BEC7F1865711D00E7226E /* INIAppDelegate.m in Sources */,
+				CE6BECA91865ADB800E7226E /* INIRange.m in Sources */,
+				CE6BECAC1865AF5E00E7226E /* INIRangeView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CE6BEC821865711D00E7226E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE6BEC941865711D00E7226E /* INIDoubleSliderTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CE6BEC8C1865711D00E7226E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CE6BEC6A1865711C00E7226E /* INIDoubleSlider */;
+			targetProxy = CE6BEC8B1865711D00E7226E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		CE6BEC771865711C00E7226E /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CE6BEC781865711C00E7226E /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		CE6BEC901865711D00E7226E /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CE6BEC911865711D00E7226E /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CE6BEC951865711D00E7226E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		CE6BEC961865711D00E7226E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CE6BEC981865711D00E7226E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 16AF097D992241E5ABB55690 /* Pods-INIDoubleSlider.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "INIDoubleSlider/INIDoubleSlider-Prefix.pch";
+				INFOPLIST_FILE = "INIDoubleSlider/INIDoubleSlider-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		CE6BEC991865711D00E7226E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 16AF097D992241E5ABB55690 /* Pods-INIDoubleSlider.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "INIDoubleSlider/INIDoubleSlider-Prefix.pch";
+				INFOPLIST_FILE = "INIDoubleSlider/INIDoubleSlider-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		CE6BEC9B1865711D00E7226E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/INIDoubleSlider.app/INIDoubleSlider";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "INIDoubleSlider/INIDoubleSlider-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "INIDoubleSliderTests/INIDoubleSliderTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		CE6BEC9C1865711D00E7226E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/INIDoubleSlider.app/INIDoubleSlider";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "INIDoubleSlider/INIDoubleSlider-Prefix.pch";
+				INFOPLIST_FILE = "INIDoubleSliderTests/INIDoubleSliderTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CE6BEC661865711C00E7226E /* Build configuration list for PBXProject "INIDoubleSlider" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE6BEC951865711D00E7226E /* Debug */,
+				CE6BEC961865711D00E7226E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CE6BEC971865711D00E7226E /* Build configuration list for PBXNativeTarget "INIDoubleSlider" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE6BEC981865711D00E7226E /* Debug */,
+				CE6BEC991865711D00E7226E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CE6BEC9A1865711D00E7226E /* Build configuration list for PBXNativeTarget "INIDoubleSliderTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE6BEC9B1865711D00E7226E /* Debug */,
+				CE6BEC9C1865711D00E7226E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CE6BEC631865711C00E7226E /* Project object */;
+}

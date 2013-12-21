@@ -5,9 +5,10 @@
 //  Created by InICe on 12/21/13.
 //  Copyright (c) 2013 Chongsawad. All rights reserved.
 //
-
-#import "INIDoubleSlider.h"
 #import <FrameAccessor/ViewFrameAccessor.h>
+#import "INIDoubleSlider.h"
+#import "INIRangeView.h"
+#import "INIRange.h"
 
 static CGFloat const kBarSizeWidth = 280.f;
 static CGFloat const kBarSizeHeight = 40.f;
@@ -20,7 +21,7 @@ static inline CGRect kBarFrame() {
 
 @interface INIDoubleSlider() {
 	UIView *barView;
-
+	UIView *rangeView;
 	UIImageView *barHighlightImageView;
 	UIImageView *barBackgroundImageView;
 	UIImageView *leftHandleView;
@@ -28,12 +29,148 @@ static inline CGRect kBarFrame() {
 
 	BOOL isTrackingLeftHandle;
 	BOOL isTrackingRightHandle;
+
+	NSMutableArray *rangeViews;
 }
 
 - (void)ini_updateValues;
 - (void)ini_endUpdates;
 
 - (UIView *)ini_trackingHandle;
+
+@end
+
+@implementation INIDoubleSlider (MultipleRanges)
+
+- (UIView *)setupRangeView
+{
+	UIView *view = [[UIImageView alloc]
+					initWithFrame:kBarFrame()];
+	view.backgroundColor = [UIColor clearColor];
+	return view;
+}
+
+- (void)ini_initializeRangeView
+{
+	rangeViews = [NSMutableArray new];
+
+	__block CGFloat lastPositionOfRange = 0;
+	[self.ranges enumerateObjectsUsingBlock:^(INIRange *range, NSUInteger idx, BOOL *stop) {
+		INIRangeView *aRangeView = [[INIRangeView alloc] initWithRange:range];
+		aRangeView.left = lastPositionOfRange;
+		aRangeView.width = range.value * kBarSizeWidth;
+		aRangeView.height = kBarSizeHeight;
+		aRangeView.backgroundColor = [UIColor clearColor];
+		[rangeViews addObject:aRangeView];
+		[rangeView addSubview:aRangeView];
+
+		lastPositionOfRange += aRangeView.width;
+	}];
+}
+
+- (void)ini_resetRangeView
+{
+	[rangeViews enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+		[obj removeFromSuperview];
+	}];
+
+	[rangeViews removeAllObjects];
+}
+
+- (INIRangeView *)ini_nearestRangeViewFromHandle:(UIView *)handle
+{
+	CGFloat point; INIRangeView *currentRangeView;
+	if ([handle isEqual:leftHandleView]) {
+		point = handle.right;
+		currentRangeView = [rangeViews lastObject];
+		
+	} else {
+		point = handle.left;
+		currentRangeView = [rangeViews firstObject];
+	}
+
+	for (INIRangeView *view in rangeViews) {
+		if ([handle isEqual:leftHandleView]
+			&& point >= view.left
+			&& point < view.right) {
+			currentRangeView = view;
+			break;
+
+		} else if ([handle isEqual:rightHandleView]
+				   && point > view.left
+				   && point <= view.right) {
+			currentRangeView = view;
+			break;
+		}
+	}
+
+	return currentRangeView;
+}
+
+- (INIRange *)ini_nearestRangeFromHandle:(UIView *)handle
+{
+	return [self ini_nearestRangeViewFromHandle:handle].range;
+}
+
+- (id)minRepresentedValue
+{
+	id value = [self ini_nearestRangeFromHandle:leftHandleView];
+	return value;
+}
+
+- (id)maxRepresentedValue
+{
+	id value = [self ini_nearestRangeFromHandle:rightHandleView];
+	return value;
+}
+
+- (void)ini_moveHandleToNearestRangeWithUpdateValue:(BOOL)forceUpdate
+{
+	INIRangeView *aLeftRangeView = [self ini_nearestRangeViewFromHandle:leftHandleView];
+	INIRangeView *aRightRangeView = [self ini_nearestRangeViewFromHandle:rightHandleView];
+
+	CGFloat moveToMinValue = ((CGFloat)[aLeftRangeView left] / kBarSizeWidth);
+	CGFloat moveToMaxValue = ((CGFloat)[aRightRangeView right] / kBarSizeWidth);
+
+	/*
+	 * Detect same range
+	 */
+	if (moveToMaxValue - moveToMinValue <= 0) {
+		leftHandleView.right -= 0.001f;
+		aLeftRangeView = [self ini_nearestRangeViewFromHandle:leftHandleView];
+		moveToMinValue = ([aLeftRangeView left] / kBarSizeWidth);
+	}
+
+	[self ini_highlightRangeViewFrom:aLeftRangeView
+							  toView:aRightRangeView];
+
+	if (forceUpdate) {
+		[self setMinValue:moveToMinValue];
+		[self setMaxValue:moveToMaxValue];
+	}
+}
+
+- (void)ini_highlightRangeViewFrom:(INIRangeView *)leftView
+							 toView:(INIRangeView *)rightView
+{
+	if (leftView.left > rightView.left) {
+		return;
+	}
+
+	BOOL startHighlighted = NO;
+	for (INIRangeView *r in rangeViews) {
+		if ([r isEqual:leftView]) {
+			startHighlighted = YES;
+
+		}
+
+		[r setHighlighted:startHighlighted];
+
+		if ([r isEqual:rightView]) {
+			startHighlighted = NO;
+		}
+	}
+}
 
 @end
 
@@ -130,10 +267,9 @@ static inline CGRect kBarFrame() {
 											   andRightHandle:aRightHandle];
 	if ([handle isEqual:aLeftHandle]) {
 		isTrackingLeftHandle = YES;
-		NSLog(@"willTrack Left Handle");
+		
 	} else {
 		isTrackingRightHandle = YES;
-		NSLog(@"willTrack Right Handle");
 	}
 
 	return handle;
@@ -190,16 +326,15 @@ static inline CGRect kBarFrame() {
 - (BOOL)continueTrackingWithTouch:(UITouch *)touch withEvent:(UIEvent *)event
 {
 	CGPoint loc = [self locationForTouch:touch];
-	NSLog(@"continueTrackingWithTouch %@", NSStringFromCGPoint(loc));
-
 	UIView *handle = [self ini_trackingHandle];
 	[self ini_moveHandle:handle toPosition:loc];
-
+	[self ini_moveHandleToNearestRangeWithUpdateValue:NO];
 	return YES;
 }
 
 - (void)endTrackingWithTouch:(UITouch *)touch withEvent:(UIEvent *)event
 {
+	[self ini_moveHandleToNearestRangeWithUpdateValue:YES];
 	[self ini_endUpdates];
 }
 
@@ -234,6 +369,10 @@ static inline CGRect kBarFrame() {
 		barHighlightImageView = [self setupBarHighlightImageView];
 		[barView insertSubview:barHighlightImageView
 				  aboveSubview:barBackgroundImageView];
+
+		rangeView = [self setupRangeView];
+		[barView insertSubview:rangeView
+				  aboveSubview:barHighlightImageView];
 		/*
 		 * Left Handle
 		 */
@@ -254,6 +393,12 @@ static inline CGRect kBarFrame() {
 	}
 
 	return self;
+}
+
+- (void)setRanges:(NSArray *)ranges
+{
+	_ranges = ranges;
+	[self ini_initializeRangeView];
 }
 
 - (UIView *)ini_trackingHandle
@@ -285,7 +430,7 @@ static inline CGRect kBarFrame() {
 {
 	_minValue = (leftHandleView.right / kBarSizeWidth);
 	_maxValue = (rightHandleView.left / kBarSizeWidth);
-
+	
 	/*
 	 * Hightlight
 	 */
