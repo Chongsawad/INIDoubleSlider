@@ -17,6 +17,18 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
+	NSMutableArray *rr = [NSMutableArray new];
+	NSUInteger numOfRange = 15;
+	CGFloat valueSpan = 1.0f/(CGFloat)numOfRange;
+	for (int i = 0; i < numOfRange; i++) {
+		INIRange *rangeA = [[INIRange alloc] init];
+		rangeA.title = [NSString stringWithFormat:@"%c", i+65];
+		rangeA.value = valueSpan;
+		[rr addObject:rangeA];
+	}
+	[slider setRanges:rr];
+
 	[slider addTarget:self
 			   action:@selector(sliderValueChanged:)
 	 forControlEvents:UIControlEventValueChanged];
@@ -27,7 +39,7 @@
 
 - (void)sliderValueChanged:(id)sender
 {
-	NSLog(@"value %f | %f", slider.minValue, slider.maxValue);
+	
 }
 
 @end
