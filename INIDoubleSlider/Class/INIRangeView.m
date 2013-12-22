@@ -24,6 +24,7 @@
 		titleLabel.highlightedTextColor = [UIColor whiteColor];
 		titleLabel.numberOfLines = 0;
 		titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
+		titleLabel.minimumScaleFactor = 0.2f;
 		_titleLabel = titleLabel;
 		[self addSubview:titleLabel];
 	}
