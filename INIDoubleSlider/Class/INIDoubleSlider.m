@@ -29,9 +29,11 @@ static CGFloat const kHandleSizeHeight = 40.f;
 
 	NSMutableArray *rangeViews;
 
-
 	CGFloat kBarSizeWidth;
 	CGFloat kBarSizeHeight;
+
+	INIRangeView *currentMinRangeView;
+	INIRangeView *currentMaxRangeView;
 }
 
 - (void)ini_updateValues;
@@ -82,6 +84,9 @@ static CGFloat const kHandleSizeHeight = 40.f;
 		lastPositionOfRange += aRangeView.width;
 	}];
 
+	currentMinRangeView = currentMinRangeView ? currentMinRangeView : [rangeViews firstObject];
+	currentMaxRangeView = currentMaxRangeView ? currentMaxRangeView : [rangeViews lastObject];
+
 	[self ini_moveHandleToNearestRangeWithUpdateValue:YES];
 	[self ini_endUpdates];
 }
@@ -100,11 +105,9 @@ static CGFloat const kHandleSizeHeight = 40.f;
 	CGFloat point; INIRangeView *currentRangeView;
 	if ([handle isEqual:leftHandleView]) {
 		point = handle.right;
-		currentRangeView = [rangeViews lastObject];
 		
 	} else {
 		point = handle.left;
-		currentRangeView = [rangeViews firstObject];
 	}
 
 	for (INIRangeView *view in rangeViews) {
@@ -132,24 +135,46 @@ static CGFloat const kHandleSizeHeight = 40.f;
 
 - (id)minRepresentedValue
 {
-	id value = [self ini_nearestRangeFromHandle:leftHandleView].title;
+	INIRangeView *aLeftRangeView = [self ini_nearestRangeViewFromHandle:leftHandleView];
+	if (!aLeftRangeView) {
+		aLeftRangeView = currentMinRangeView;
+	}
+
+	id value = [aLeftRangeView.range title];
 	return value;
 }
 
 - (id)maxRepresentedValue
 {
-	id value = [self ini_nearestRangeFromHandle:rightHandleView].title;
+	INIRangeView *aRightRangeView = [self ini_nearestRangeViewFromHandle:rightHandleView];
+	if (!aRightRangeView) {
+		aRightRangeView = currentMaxRangeView;
+	}
+	id value = [aRightRangeView.range title];
 	return value;
 }
 
-- (void)ini_moveHandleToNearestRangeWithUpdateValue:(BOOL)forceUpdate
+- (void)ini_keepNearestRangeFromHandles
 {
 	INIRangeView *aLeftRangeView = [self ini_nearestRangeViewFromHandle:leftHandleView];
 	INIRangeView *aRightRangeView = [self ini_nearestRangeViewFromHandle:rightHandleView];
 
+	if (!aLeftRangeView) {
+		aLeftRangeView = currentMinRangeView;
+	}
+	if (!aRightRangeView) {
+		aRightRangeView = currentMaxRangeView;
+	}
 
-	CGFloat moveToMinValue = ((CGFloat)[aLeftRangeView left] / kBarSizeWidth);
-	CGFloat moveToMaxValue = ((CGFloat)[aRightRangeView right] / kBarSizeWidth);
+	currentMinRangeView = aLeftRangeView;
+	currentMaxRangeView = aRightRangeView;
+}
+
+- (void)ini_moveHandleToNearestRangeWithUpdateValue:(BOOL)forceUpdate
+{
+	[self ini_keepNearestRangeFromHandles];
+	CGFloat moveToMinValue = ((CGFloat)[currentMinRangeView left] / kBarSizeWidth);
+	CGFloat moveToMaxValue = ((CGFloat)[currentMaxRangeView right] / kBarSizeWidth);
 	if (!self.shouldSlideToNearestRange) {
 		moveToMinValue = leftHandleView.right / kBarSizeWidth;
 		moveToMaxValue = rightHandleView.left / kBarSizeWidth;
@@ -160,12 +185,12 @@ static CGFloat const kHandleSizeHeight = 40.f;
 	 */
 	if (moveToMaxValue - moveToMinValue <= 0) {
 		leftHandleView.right -= 0.001f;
-		aLeftRangeView = [self ini_nearestRangeViewFromHandle:leftHandleView];
-		moveToMinValue = ([aLeftRangeView left] / kBarSizeWidth);
+		currentMinRangeView = [self ini_nearestRangeViewFromHandle:leftHandleView];
+		moveToMinValue = ([currentMinRangeView left] / kBarSizeWidth);
 	}
 
-	[self ini_highlightRangeViewFrom:aLeftRangeView
-							  toView:aRightRangeView];
+	[self ini_highlightRangeViewFrom:currentMinRangeView
+							  toView:currentMaxRangeView];
 
 	if (forceUpdate) {
 		[UIView beginAnimations:@"Move" context:NULL];
