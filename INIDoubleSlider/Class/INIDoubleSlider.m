@@ -162,7 +162,8 @@ static inline CGRect kBarFrame() {
 
 	if (forceUpdate) {
 		[UIView beginAnimations:@"Move" context:NULL];
-		[UIView setAnimationDuration:0.1f];
+		[UIView setAnimationDuration:0.2f];
+		[UIView setAnimationBeginsFromCurrentState:YES];
 		[self setMinValue:moveToMinValue];
 		[self setMaxValue:moveToMaxValue];
 		[UIView commitAnimations];
