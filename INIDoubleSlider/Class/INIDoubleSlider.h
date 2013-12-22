@@ -19,6 +19,19 @@
 
 @property (nonatomic, strong) NSArray *ranges;
 
+@property (nonatomic, strong) UIColor *handleColor UI_APPEARANCE_SELECTOR;
+@property (nonatomic, strong) UIColor *barColor UI_APPEARANCE_SELECTOR;
+@property (nonatomic, strong) UIColor *barHighlightedColor UI_APPEARANCE_SELECTOR;
+
+@property (nonatomic, strong) UIImage *handleImage UI_APPEARANCE_SELECTOR;
+@property (nonatomic, strong) UIImage *barImage UI_APPEARANCE_SELECTOR;
+@property (nonatomic, strong) UIImage *barHighlightedImage UI_APPEARANCE_SELECTOR;
+@property (nonatomic, assign) UIEdgeInsets barHilightedCapInset UI_APPEARANCE_SELECTOR;
+
+@property (nonatomic, strong) UIImage *separatorImage;
+@property (nonatomic, strong) UIColor *separatorColor;
+@property (nonatomic, assign) UIEdgeInsets separatorInset;
+
 @end
 
 @interface INIDoubleSlider (RepresentedValue)

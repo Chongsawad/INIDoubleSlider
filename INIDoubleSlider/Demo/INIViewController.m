@@ -35,6 +35,19 @@
 
 	[slider setMinValue:0.25f];
 	[slider setMaxValue:0.75f];
+
+	[[INIDoubleSlider appearance] setHandleColor:[UIColor clearColor]];
+	[[INIDoubleSlider appearance] setBackgroundColor:[UIColor clearColor]];
+	[[INIDoubleSlider appearance] setBarColor:[UIColor clearColor]];
+	[[INIDoubleSlider appearance] setHandleImage:[UIImage imageNamed:@"bt-handle-button"]];
+
+	[[INIDoubleSlider appearance] setBarImage:[UIImage imageNamed:@"bg-slide-bar"]];
+	[[INIDoubleSlider appearance] setBarHighlightedImage:[UIImage imageNamed:@"bg-slide-bar-ac"]];
+	[[INIDoubleSlider appearance] setBarHilightedCapInset:UIEdgeInsetsMake(2, 0, 2, 0)];
+	
+	[[INIDoubleSlider appearance] setSeparatorColor:[UIColor clearColor]];
+	[[INIDoubleSlider appearance] setSeparatorImage:[UIImage imageNamed:@"separator"]];
+	[[INIDoubleSlider appearance] setSeparatorInset:UIEdgeInsetsMake(2, 0, 2, 0)];
 }
 
 - (void)sliderValueChanged:(id)sender

@@ -11,9 +11,9 @@
 #import "INIRange.h"
 
 static CGFloat const kBarSizeWidth = 280.f;
-static CGFloat const kBarSizeHeight = 40.f;
+static CGFloat const kBarSizeHeight = 26.f;
 static CGFloat const kHandleSizeWidth = 20.f;
-static CGFloat const kHandleSizeHeight = kBarSizeHeight;
+static CGFloat const kHandleSizeHeight = 40.f;
 
 static inline CGRect kBarFrame() {
 	return CGRectMake(0, 0, kBarSizeWidth, kBarSizeHeight);
@@ -22,7 +22,7 @@ static inline CGRect kBarFrame() {
 @interface INIDoubleSlider() {
 	UIView *barView;
 	UIView *rangeView;
-	UIImageView *barHighlightImageView;
+	UIView *barHighlightImageView;
 	UIImageView *barBackgroundImageView;
 	UIImageView *leftHandleView;
 	UIImageView *rightHandleView;
@@ -63,6 +63,17 @@ static inline CGRect kBarFrame() {
 		aRangeView.backgroundColor = [UIColor clearColor];
 		[rangeViews addObject:aRangeView];
 		[rangeView addSubview:aRangeView];
+
+		if (idx != self.ranges.count - 1) {
+			UIImageView *separatorView = [[UIImageView alloc] initWithImage:self.separatorImage];
+			separatorView.backgroundColor = self.separatorColor;
+			separatorView.top = self.separatorInset.top;
+			separatorView.left = aRangeView.width - 1;
+			separatorView.width = 1;
+			separatorView.height = aRangeView.height - self.separatorInset.top - self.separatorInset.bottom;
+
+			[aRangeView addSubview:separatorView];
+		}
 
 		lastPositionOfRange += aRangeView.width;
 	}];
@@ -191,14 +202,14 @@ static inline CGRect kBarFrame() {
 {
 	UIImageView *imageView = [[UIImageView alloc]
 								 initWithFrame:kBarFrame()];
-	imageView.backgroundColor = [UIColor yellowColor];
+	imageView.backgroundColor = [UIColor clearColor];
 	imageView.clipsToBounds = YES;
 	return imageView;
 }
 
-- (UIImageView *)setupBarHighlightImageView
+- (UIView *)setupBarHighlightImageView
 {
-	UIImageView *imageView = [[UIImageView alloc]
+	UIView *imageView = [[UIImageView alloc]
 							  initWithFrame:kBarFrame()];
 	imageView.backgroundColor = [UIColor greenColor];
 	imageView.clipsToBounds = YES;
@@ -380,7 +391,7 @@ static inline CGRect kBarFrame() {
 		 * Left Handle
 		 */
 		leftHandleView = [self setupHandleView];
-		leftHandleView.centerY = leftHandleView.middleY;
+		leftHandleView.centerY = barView.middleY;
 		leftHandleView.right = 0;
 		leftHandleView.backgroundColor = [UIColor redColor];
 		[barView addSubview:leftHandleView];
@@ -389,7 +400,7 @@ static inline CGRect kBarFrame() {
 		 * Right Handle
 		 */
 		rightHandleView = [self setupHandleView];
-		rightHandleView.centerY = rightHandleView.middleY;
+		rightHandleView.centerY = barView.middleY;
 		rightHandleView.left = barView.width;
 		rightHandleView.backgroundColor = [UIColor blueColor];
 		[barView addSubview:rightHandleView];
@@ -460,6 +471,68 @@ static inline CGRect kBarFrame() {
 	[self ini_beginUpdateHandle:rightHandleView endUpdate:^(UIView *handle) {
 		[self ini_moveHandle:handle toValue:maxValue];
 	}];
+}
+
++ (void)initialize
+{
+	if (self == [INIDoubleSlider class]) {
+		INIDoubleSlider *appearance = [INIDoubleSlider appearance];
+		[appearance setBackgroundColor:[UIColor clearColor]];
+		[appearance setSeparatorColor:[UIColor whiteColor]];
+	}
+}
+
+- (void)setHandleColor:(UIColor *)handleColor
+{
+	leftHandleView.backgroundColor = [UIColor clearColor];
+	rightHandleView.backgroundColor = [UIColor clearColor];
+}
+
+- (void)setHandleImage:(UIImage *)handleImage
+{
+	leftHandleView.image = handleImage;
+	rightHandleView.image = handleImage;
+}
+
+- (void)setBarImage:(UIImage *)barImage
+{
+	barBackgroundImageView.image = barImage;
+}
+
+- (void)setBarHighlightedImage:(UIImage *)barHighlightedImage
+{
+	barHighlightImageView.backgroundColor = [UIColor colorWithPatternImage:barHighlightedImage];
+}
+
+- (void)setBarColor:(UIColor *)barColor
+{
+	barView.backgroundColor = barColor;
+}
+
+- (void)setBarHighlightedColor:(UIColor *)barHighlightedColor
+{
+	barHighlightImageView.backgroundColor = barHighlightedColor;
+}
+
+- (void)setSeparatorColor:(UIColor *)separatorColor
+{
+	_separatorColor = separatorColor;
+	[self ini_resetRangeView];
+	[self ini_initializeRangeView];
+}
+
+- (void)setSeparatorImage:(UIImage *)separatorImage
+{
+	_separatorImage = separatorImage;
+	[self ini_resetRangeView];
+	[self ini_initializeRangeView];
+}
+
+- (void)setSeparatorInset:(UIEdgeInsets)separatorInset
+{
+	_separatorInset = separatorInset;
+	[self ini_resetRangeView];
+	[self ini_initializeRangeView];
 }
 
 @end
