@@ -10,14 +10,11 @@
 #import "INIRangeView.h"
 #import "INIRange.h"
 
-static CGFloat const kBarSizeWidth = 280.f;
-static CGFloat const kBarSizeHeight = 26.f;
+static CGFloat const kDefaultBarSizeWidth = 240.0f;
+static CGFloat const kDefaultBarSizeHeight = 26.0f;
+
 static CGFloat const kHandleSizeWidth = 20.f;
 static CGFloat const kHandleSizeHeight = 40.f;
-
-static inline CGRect kBarFrame() {
-	return CGRectMake(0, 0, kBarSizeWidth, kBarSizeHeight);
-};
 
 @interface INIDoubleSlider() {
 	UIView *barView;
@@ -31,12 +28,17 @@ static inline CGRect kBarFrame() {
 	BOOL isTrackingRightHandle;
 
 	NSMutableArray *rangeViews;
+
+
+	CGFloat kBarSizeWidth;
+	CGFloat kBarSizeHeight;
 }
 
 - (void)ini_updateValues;
 - (void)ini_endUpdates;
 
 - (UIView *)ini_trackingHandle;
+- (CGRect)kBarFrame;
 
 @end
 
@@ -45,7 +47,7 @@ static inline CGRect kBarFrame() {
 - (UIView *)setupRangeView
 {
 	UIView *view = [[UIImageView alloc]
-					initWithFrame:kBarFrame()];
+					initWithFrame:[self kBarFrame]];
 	view.backgroundColor = [UIColor clearColor];
 	return view;
 }
@@ -203,7 +205,7 @@ static inline CGRect kBarFrame() {
 - (UIView *)setupBarView
 {
 	UIView *view = [[UIImageView alloc]
-							initWithFrame:kBarFrame()];
+							initWithFrame:[self kBarFrame]];
 	view.backgroundColor = [UIColor yellowColor];
 	return view;
 }
@@ -211,8 +213,9 @@ static inline CGRect kBarFrame() {
 - (UIImageView *)setupBarBackgroundImageView
 {
 	UIImageView *imageView = [[UIImageView alloc]
-								 initWithFrame:kBarFrame()];
+								 initWithFrame:[self kBarFrame]];
 	imageView.backgroundColor = [UIColor clearColor];
+	imageView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
 	imageView.clipsToBounds = YES;
 	return imageView;
 }
@@ -220,8 +223,9 @@ static inline CGRect kBarFrame() {
 - (UIView *)setupBarHighlightImageView
 {
 	UIView *imageView = [[UIImageView alloc]
-							  initWithFrame:kBarFrame()];
+							  initWithFrame:[self kBarFrame]];
 	imageView.backgroundColor = [UIColor greenColor];
+	imageView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
 	imageView.clipsToBounds = YES;
 	return imageView;
 }
@@ -371,14 +375,36 @@ static inline CGRect kBarFrame() {
 
 @implementation INIDoubleSlider
 
+- (CGRect)kBarFrame
+{
+	return CGRectMake(0, 0, kBarSizeWidth, kBarSizeHeight);
+}
+
+- (void)updateFrameRect
+{
+	kBarSizeWidth = self.barSize.width > 0 ? self.barSize.width : kDefaultBarSizeWidth;;
+	kBarSizeHeight = self.barSize.height > 0 ? self.barSize.height : kDefaultBarSizeHeight;
+
+	barView.size = self.barSize;
+	barView.center = CGPointMake(CGRectGetMidX(self.bounds), CGRectGetMidY(self.bounds));
+
+	leftHandleView.centerY = barView.middleY;
+	leftHandleView.right = 0;
+
+	rightHandleView.centerY = barView.middleY;
+	rightHandleView.left = barView.width;
+}
+
 - (id)initWithCoder:(NSCoder *)aDecoder
 {
 	if (self = [super initWithCoder:aDecoder]) {
+		kBarSizeWidth = kDefaultBarSizeWidth;
+		kBarSizeHeight = kDefaultBarSizeHeight;
+
 		/*
 		 * Bar
 		 */
 		barView = [self setupBarView];
-		barView.center = CGPointMake(CGRectGetMidX(self.bounds), CGRectGetMidY(self.bounds));
 		[self addSubview:barView];
 
 		/*
@@ -401,8 +427,6 @@ static inline CGRect kBarFrame() {
 		 * Left Handle
 		 */
 		leftHandleView = [self setupHandleView];
-		leftHandleView.centerY = barView.middleY;
-		leftHandleView.right = 0;
 		leftHandleView.backgroundColor = [UIColor redColor];
 		[barView addSubview:leftHandleView];
 
@@ -410,10 +434,10 @@ static inline CGRect kBarFrame() {
 		 * Right Handle
 		 */
 		rightHandleView = [self setupHandleView];
-		rightHandleView.centerY = barView.middleY;
-		rightHandleView.left = barView.width;
 		rightHandleView.backgroundColor = [UIColor blueColor];
 		[barView addSubview:rightHandleView];
+
+		[self updateFrameRect];
 	}
 
 	return self;
@@ -497,6 +521,7 @@ static inline CGRect kBarFrame() {
 		INIDoubleSlider *appearance = [INIDoubleSlider appearance];
 		[appearance setBackgroundColor:[UIColor clearColor]];
 		[appearance setSeparatorColor:[UIColor whiteColor]];
+		[appearance setBarSize:CGSizeMake(kDefaultBarSizeWidth, kDefaultBarSizeHeight)];
 	}
 }
 
@@ -557,6 +582,14 @@ static inline CGRect kBarFrame() {
 {
 	_font = font;
 	[self ini_resetRangeView];
+	[self ini_initializeRangeView];
+}
+
+- (void)setBarSize:(CGSize)barSize
+{
+	_barSize = barSize;
+	[self ini_resetRangeView];
+	[self updateFrameRect];
 	[self ini_initializeRangeView];
 }
 

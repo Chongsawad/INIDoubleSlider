@@ -17,12 +17,13 @@
 @property (nonatomic, assign) CGFloat minValue;
 @property (nonatomic, assign) CGFloat maxValue;
 @property (nonatomic, strong) NSArray *ranges;
-
 @property (nonatomic, assign) BOOL shouldSlideToNearestRange;
 
 /*
  * Appearance
  */
+@property (nonatomic, assign) CGSize barSize UI_APPEARANCE_SELECTOR;
+
 @property (nonatomic, strong) UIColor *handleColor UI_APPEARANCE_SELECTOR;
 @property (nonatomic, strong) UIColor *barColor UI_APPEARANCE_SELECTOR;
 @property (nonatomic, strong) UIColor *barHighlightedColor UI_APPEARANCE_SELECTOR;
@@ -32,9 +33,9 @@
 @property (nonatomic, strong) UIImage *barHighlightedImage UI_APPEARANCE_SELECTOR;
 @property (nonatomic, assign) UIEdgeInsets barHilightedCapInset UI_APPEARANCE_SELECTOR;
 
-@property (nonatomic, strong) UIImage *separatorImage;
-@property (nonatomic, strong) UIColor *separatorColor;
-@property (nonatomic, assign) UIEdgeInsets separatorInset;
+@property (nonatomic, strong) UIImage *separatorImage UI_APPEARANCE_SELECTOR;
+@property (nonatomic, strong) UIColor *separatorColor UI_APPEARANCE_SELECTOR;
+@property (nonatomic, assign) UIEdgeInsets separatorInset UI_APPEARANCE_SELECTOR;
 
 @property (nonatomic, strong) UIFont *font UI_APPEARANCE_SELECTOR;
 
