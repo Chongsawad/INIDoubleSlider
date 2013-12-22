@@ -347,13 +347,19 @@ static inline CGRect kBarFrame() {
 	CGPoint loc = [self locationForTouch:touch];
 	UIView *handle = [self ini_trackingHandle];
 	[self ini_moveHandle:handle toPosition:loc];
-	[self ini_moveHandleToNearestRangeWithUpdateValue:NO];
+
+
+	if (self.shouldSlideToNearestRange) {
+		[self ini_moveHandleToNearestRangeWithUpdateValue:NO];
+	}
 	return YES;
 }
 
 - (void)endTrackingWithTouch:(UITouch *)touch withEvent:(UIEvent *)event
 {
-	[self ini_moveHandleToNearestRangeWithUpdateValue:YES];
+	if (self.shouldSlideToNearestRange) {
+		[self ini_moveHandleToNearestRangeWithUpdateValue:YES];
+	}
 	[self ini_endUpdates];
 }
 
@@ -418,6 +424,13 @@ static inline CGRect kBarFrame() {
 {
 	_ranges = ranges;
 	[self ini_initializeRangeView];
+}
+
+- (void)setShouldSlideToNearestRange:(BOOL)shouldSlideToNearestRange
+{
+	if (_ranges.count == 0) {
+		_shouldSlideToNearestRange = NO;
+	}
 }
 
 - (UIView *)ini_trackingHandle

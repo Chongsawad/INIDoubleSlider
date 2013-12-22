@@ -18,6 +18,8 @@
 @property (nonatomic, assign) CGFloat maxValue;
 @property (nonatomic, strong) NSArray *ranges;
 
+@property (nonatomic, assign) BOOL shouldSlideToNearestRange;
+
 /*
  * Appearance
  */
