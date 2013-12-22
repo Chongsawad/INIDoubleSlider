@@ -22,6 +22,8 @@
 		titleLabel.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
 		titleLabel.text = _range.title;
 		titleLabel.highlightedTextColor = [UIColor whiteColor];
+		titleLabel.numberOfLines = 0;
+		titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
 		_titleLabel = titleLabel;
 		[self addSubview:titleLabel];
 	}
