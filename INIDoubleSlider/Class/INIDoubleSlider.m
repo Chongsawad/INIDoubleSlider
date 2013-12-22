@@ -145,8 +145,11 @@ static inline CGRect kBarFrame() {
 							  toView:aRightRangeView];
 
 	if (forceUpdate) {
+		[UIView beginAnimations:@"Move" context:NULL];
+		[UIView setAnimationDuration:0.1f];
 		[self setMinValue:moveToMinValue];
 		[self setMaxValue:moveToMaxValue];
+		[UIView commitAnimations];
 	}
 }
 
@@ -434,14 +437,15 @@ static inline CGRect kBarFrame() {
 	/*
 	 * Hightlight
 	 */
-	barHighlightImageView.left = leftHandleView.right;
-	barHighlightImageView.width = rightHandleView.left - leftHandleView.right;
+	barHighlightImageView.left = leftHandleView.centerX;
+	barHighlightImageView.width = rightHandleView.centerX - leftHandleView.centerX;
 }
 
 - (void)ini_endUpdates
 {
 	isTrackingLeftHandle = NO;
 	isTrackingRightHandle = NO;
+	[self ini_moveHandleToNearestRangeWithUpdateValue:NO];
 }
 
 - (void)setMinValue:(CGFloat)minValue
