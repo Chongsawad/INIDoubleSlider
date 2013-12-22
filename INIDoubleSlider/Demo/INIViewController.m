@@ -48,6 +48,8 @@
 	[[INIDoubleSlider appearance] setSeparatorColor:[UIColor clearColor]];
 	[[INIDoubleSlider appearance] setSeparatorImage:[UIImage imageNamed:@"separator"]];
 	[[INIDoubleSlider appearance] setSeparatorInset:UIEdgeInsetsMake(2, 0, 2, 0)];
+
+	[[INIDoubleSlider appearance] setFont:[UIFont systemFontOfSize:10]];
 }
 
 - (void)sliderValueChanged:(id)sender

@@ -61,6 +61,8 @@ static inline CGRect kBarFrame() {
 		aRangeView.width = range.value * kBarSizeWidth;
 		aRangeView.height = kBarSizeHeight;
 		aRangeView.backgroundColor = [UIColor clearColor];
+		aRangeView.titleLabel.font = self.font;
+		
 		[rangeViews addObject:aRangeView];
 		[rangeView addSubview:aRangeView];
 
@@ -531,6 +533,13 @@ static inline CGRect kBarFrame() {
 - (void)setSeparatorInset:(UIEdgeInsets)separatorInset
 {
 	_separatorInset = separatorInset;
+	[self ini_resetRangeView];
+	[self ini_initializeRangeView];
+}
+
+- (void)setFont:(UIFont *)font
+{
+	_font = font;
 	[self ini_resetRangeView];
 	[self ini_initializeRangeView];
 }

@@ -32,6 +32,8 @@
 @property (nonatomic, strong) UIColor *separatorColor;
 @property (nonatomic, assign) UIEdgeInsets separatorInset;
 
+@property (nonatomic, strong) UIFont *font UI_APPEARANCE_SELECTOR;
+
 @end
 
 @interface INIDoubleSlider (RepresentedValue)
