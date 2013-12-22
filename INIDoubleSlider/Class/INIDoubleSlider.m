@@ -145,8 +145,13 @@ static inline CGRect kBarFrame() {
 	INIRangeView *aLeftRangeView = [self ini_nearestRangeViewFromHandle:leftHandleView];
 	INIRangeView *aRightRangeView = [self ini_nearestRangeViewFromHandle:rightHandleView];
 
+
 	CGFloat moveToMinValue = ((CGFloat)[aLeftRangeView left] / kBarSizeWidth);
 	CGFloat moveToMaxValue = ((CGFloat)[aRightRangeView right] / kBarSizeWidth);
+	if (!self.shouldSlideToNearestRange) {
+		moveToMinValue = leftHandleView.right / kBarSizeWidth;
+		moveToMaxValue = rightHandleView.left / kBarSizeWidth;
+	}
 
 	/*
 	 * Detect same range
@@ -347,19 +352,13 @@ static inline CGRect kBarFrame() {
 	CGPoint loc = [self locationForTouch:touch];
 	UIView *handle = [self ini_trackingHandle];
 	[self ini_moveHandle:handle toPosition:loc];
-
-
-	if (self.shouldSlideToNearestRange) {
-		[self ini_moveHandleToNearestRangeWithUpdateValue:NO];
-	}
+	[self ini_moveHandleToNearestRangeWithUpdateValue:NO];
 	return YES;
 }
 
 - (void)endTrackingWithTouch:(UITouch *)touch withEvent:(UIEvent *)event
 {
-	if (self.shouldSlideToNearestRange) {
-		[self ini_moveHandleToNearestRangeWithUpdateValue:YES];
-	}
+	[self ini_moveHandleToNearestRangeWithUpdateValue:YES];
 	[self ini_endUpdates];
 }
 
@@ -428,7 +427,8 @@ static inline CGRect kBarFrame() {
 
 - (void)setShouldSlideToNearestRange:(BOOL)shouldSlideToNearestRange
 {
-	if (_ranges.count == 0) {
+	_shouldSlideToNearestRange = shouldSlideToNearestRange;
+	if (_ranges.count <= 1) {
 		_shouldSlideToNearestRange = NO;
 	}
 }
