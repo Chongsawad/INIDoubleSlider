@@ -114,13 +114,13 @@ static inline CGRect kBarFrame() {
 
 - (id)minRepresentedValue
 {
-	id value = [self ini_nearestRangeFromHandle:leftHandleView];
+	id value = [self ini_nearestRangeFromHandle:leftHandleView].title;
 	return value;
 }
 
 - (id)maxRepresentedValue
 {
-	id value = [self ini_nearestRangeFromHandle:rightHandleView];
+	id value = [self ini_nearestRangeFromHandle:rightHandleView].title;
 	return value;
 }
 
