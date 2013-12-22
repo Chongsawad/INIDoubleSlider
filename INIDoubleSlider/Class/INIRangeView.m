@@ -19,12 +19,12 @@
 		UILabel *titleLabel = [[UILabel alloc] init];
 		titleLabel.size = self.size;
 		titleLabel.textAlignment = NSTextAlignmentCenter;
+		titleLabel.numberOfLines = 0;
+		titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
+		titleLabel.minimumScaleFactor = 0;
 		titleLabel.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
 		titleLabel.text = _range.title;
 		titleLabel.highlightedTextColor = [UIColor whiteColor];
-		titleLabel.numberOfLines = 0;
-		titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
-		titleLabel.minimumScaleFactor = 0.2f;
 		_titleLabel = titleLabel;
 		[self addSubview:titleLabel];
 	}

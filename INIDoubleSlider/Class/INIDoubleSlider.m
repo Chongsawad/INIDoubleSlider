@@ -79,6 +79,9 @@ static inline CGRect kBarFrame() {
 
 		lastPositionOfRange += aRangeView.width;
 	}];
+
+	[self ini_moveHandleToNearestRangeWithUpdateValue:YES];
+	[self ini_endUpdates];
 }
 
 - (void)ini_resetRangeView
@@ -177,7 +180,6 @@ static inline CGRect kBarFrame() {
 	for (INIRangeView *r in rangeViews) {
 		if ([r isEqual:leftView]) {
 			startHighlighted = YES;
-
 		}
 
 		[r setHighlighted:startHighlighted];

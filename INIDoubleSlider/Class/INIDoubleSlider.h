@@ -16,9 +16,11 @@
  */
 @property (nonatomic, assign) CGFloat minValue;
 @property (nonatomic, assign) CGFloat maxValue;
-
 @property (nonatomic, strong) NSArray *ranges;
 
+/*
+ * Appearance
+ */
 @property (nonatomic, strong) UIColor *handleColor UI_APPEARANCE_SELECTOR;
 @property (nonatomic, strong) UIColor *barColor UI_APPEARANCE_SELECTOR;
 @property (nonatomic, strong) UIColor *barHighlightedColor UI_APPEARANCE_SELECTOR;
