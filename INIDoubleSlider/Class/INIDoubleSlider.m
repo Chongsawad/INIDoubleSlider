@@ -595,42 +595,9 @@ static CGFloat const kHandleSizeHeight = 40.f;
 	barView.backgroundColor = barColor;
 }
 
-- (void)setBarHighlightedColor:(UIColor *)barHighlightedColor
+- (void)layoutSubviews
 {
-	barHighlightImageView.backgroundColor = barHighlightedColor;
-}
-
-- (void)setSeparatorColor:(UIColor *)separatorColor
-{
-	_separatorColor = separatorColor;
-	[self ini_resetRangeView];
-	[self ini_initializeRangeView];
-}
-
-- (void)setSeparatorImage:(UIImage *)separatorImage
-{
-	_separatorImage = separatorImage;
-	[self ini_resetRangeView];
-	[self ini_initializeRangeView];
-}
-
-- (void)setSeparatorInset:(UIEdgeInsets)separatorInset
-{
-	_separatorInset = separatorInset;
-	[self ini_resetRangeView];
-	[self ini_initializeRangeView];
-}
-
-- (void)setFont:(UIFont *)font
-{
-	_font = font;
-	[self ini_resetRangeView];
-	[self ini_initializeRangeView];
-}
-
-- (void)setBarSize:(CGSize)barSize
-{
-	_barSize = barSize;
+	[super layoutSubviews];
 	[self ini_resetRangeView];
 	[self updateFrameRect];
 	[self ini_initializeRangeView];
