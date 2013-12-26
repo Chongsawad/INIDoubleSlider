@@ -39,11 +39,11 @@
 		[r addObject:rangeA];
 	}];
 
-	//[slider setRanges:r];
+	[slider setRanges:r];
 
-	INISpecialRange *spRange = [[INISpecialRange alloc] init];
-	spRange.value = 1;
-	[slider setRanges:@[spRange]];
+	//	INISpecialRange *spRange = [[INISpecialRange alloc] init];
+	//	spRange.value = 1;
+	//	[slider setRanges:@[spRange]];
 
 	[slider addTarget:self
 			   action:@selector(sliderValueChanged:)
@@ -83,6 +83,21 @@
 	}
 	//minLabel.text = [slider minRepresentedValue];
 	//maxLabel.text = [slider maxRepresentedValue];
+}
+
+- (IBAction)restoreAction:(id)sender
+{
+	if (self.presentingViewController.presentedViewController == self) {
+		[self dismissViewControllerAnimated:YES completion:nil];
+
+	} else {
+		UIViewController *vc = [[[self class] alloc]
+								initWithNibName:NSStringFromClass([self class])
+								bundle:nil];
+		[self presentViewController:vc
+						   animated:YES
+						 completion:nil];
+	}
 }
 
 @end
