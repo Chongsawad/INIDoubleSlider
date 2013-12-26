@@ -7,6 +7,7 @@
 //
 
 #import "INIViewController.h"
+#import "INISpecialRange.h"
 
 @interface INIViewController ()
 
@@ -19,7 +20,7 @@
     [super viewDidLoad];
 
 	NSMutableArray *rr = [NSMutableArray new];
-	NSUInteger numOfRange = 15;
+	NSUInteger numOfRange = 11;
 	CGFloat valueSpan = 1.0f/(CGFloat)numOfRange;
 	for (int i = 0; i < numOfRange; i++) {
 		INIRange *rangeA = [[INIRange alloc] init];
@@ -27,14 +28,30 @@
 		rangeA.value = valueSpan;
 		[rr addObject:rangeA];
 	}
-	[slider setRanges:rr];
+
+	NSArray *d = @[@"IDEAL", @"EXCELLENT", @"VERY GOOD", @"GOOD", @"FAIR"];
+
+	NSMutableArray *r = [NSMutableArray new];
+	[d enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+		INIRange *rangeA = [[INIRange alloc] init];
+		rangeA.title = obj;
+		rangeA.value = 1.0f/d.count;
+		[r addObject:rangeA];
+	}];
+
+	//[slider setRanges:r];
+
+	INISpecialRange *spRange = [[INISpecialRange alloc] init];
+	spRange.value = 1;
+	[slider setRanges:@[spRange]];
 
 	[slider addTarget:self
 			   action:@selector(sliderValueChanged:)
 	 forControlEvents:UIControlEventValueChanged];
 
-	[slider setMinValue:0.25f];
-	[slider setMaxValue:0.75f];
+	[slider setMinValue:0.1];
+	[slider setMaxValue:0.4];
+	[slider setShouldSlideToNearestRange:YES];
 
 	[[INIDoubleSlider appearance] setHandleColor:[UIColor clearColor]];
 	[[INIDoubleSlider appearance] setBackgroundColor:[UIColor clearColor]];
@@ -54,7 +71,18 @@
 
 - (void)sliderValueChanged:(id)sender
 {
-	
+	INISpecialRange *minRange = [slider minRepresentedRange];
+
+	if ([minRange isKindOfClass:[INISpecialRange class]]) {
+		minLabel.text = [minRange intervalValue:slider.minValue];
+	}
+
+	INISpecialRange *maxRange = [slider maxRepresentedRange];
+	if ([maxRange isKindOfClass:[INISpecialRange class]]) {
+		maxLabel.text = [maxRange intervalValue:slider.maxValue];
+	}
+	//minLabel.text = [slider minRepresentedValue];
+	//maxLabel.text = [slider maxRepresentedValue];
 }
 
 @end

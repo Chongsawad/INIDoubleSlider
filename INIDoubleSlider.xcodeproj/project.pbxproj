@@ -25,6 +25,7 @@
 		CE6BECA51865721B00E7226E /* INIViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE6BECA31865721B00E7226E /* INIViewController.xib */; };
 		CE6BECA91865ADB800E7226E /* INIRange.m in Sources */ = {isa = PBXBuildFile; fileRef = CE6BECA81865ADB800E7226E /* INIRange.m */; };
 		CE6BECAC1865AF5E00E7226E /* INIRangeView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE6BECAB1865AF5E00E7226E /* INIRangeView.m */; };
+		CEC8862D186C050F0086849F /* INISpecialRange.m in Sources */ = {isa = PBXBuildFile; fileRef = CEC8862C186C050F0086849F /* INISpecialRange.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,8 @@
 		CE6BECA81865ADB800E7226E /* INIRange.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = INIRange.m; path = Class/INIRange.m; sourceTree = "<group>"; };
 		CE6BECAA1865AF5E00E7226E /* INIRangeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = INIRangeView.h; path = Class/INIRangeView.h; sourceTree = "<group>"; };
 		CE6BECAB1865AF5E00E7226E /* INIRangeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = INIRangeView.m; path = Class/INIRangeView.m; sourceTree = "<group>"; };
+		CEC8862B186C050F0086849F /* INISpecialRange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = INISpecialRange.h; path = Demo/INISpecialRange.h; sourceTree = "<group>"; };
+		CEC8862C186C050F0086849F /* INISpecialRange.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = INISpecialRange.m; path = Demo/INISpecialRange.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,6 +188,8 @@
 				CE6BECA11865721B00E7226E /* INIViewController.h */,
 				CE6BECA21865721B00E7226E /* INIViewController.m */,
 				CE6BECA31865721B00E7226E /* INIViewController.xib */,
+				CEC8862B186C050F0086849F /* INISpecialRange.h */,
+				CEC8862C186C050F0086849F /* INISpecialRange.m */,
 			);
 			name = Demo;
 			sourceTree = "<group>";
@@ -323,6 +328,7 @@
 			files = (
 				CE6BEC9F1865719700E7226E /* INIDoubleSlider.m in Sources */,
 				CE6BECA41865721B00E7226E /* INIViewController.m in Sources */,
+				CEC8862D186C050F0086849F /* INISpecialRange.m in Sources */,
 				CE6BEC7B1865711D00E7226E /* main.m in Sources */,
 				CE6BEC7F1865711D00E7226E /* INIAppDelegate.m in Sources */,
 				CE6BECA91865ADB800E7226E /* INIRange.m in Sources */,

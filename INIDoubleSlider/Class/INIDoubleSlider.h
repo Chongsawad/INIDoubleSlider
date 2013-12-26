@@ -44,4 +44,8 @@
 @interface INIDoubleSlider (RepresentedValue)
 - (id)minRepresentedValue;
 - (id)maxRepresentedValue;
+
+- (id)minRepresentedRange;
+- (id)maxRepresentedRange;
+
 @end

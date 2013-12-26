@@ -11,6 +11,8 @@
 
 @interface INIViewController : UIViewController {
 	IBOutlet INIDoubleSlider *slider;
+	IBOutlet UILabel *minLabel;
+	IBOutlet UILabel *maxLabel;
 }
 
 @end

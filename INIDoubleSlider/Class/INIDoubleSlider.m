@@ -59,10 +59,10 @@ static CGFloat const kHandleSizeHeight = 40.f;
 	rangeViews = [NSMutableArray new];
 
 	__block CGFloat lastPositionOfRange = 0;
-	[self.ranges enumerateObjectsUsingBlock:^(INIRange *range, NSUInteger idx, BOOL *stop) {
+	[self.ranges enumerateObjectsUsingBlock:^(id range, NSUInteger idx, BOOL *stop) {
 		INIRangeView *aRangeView = [[INIRangeView alloc] initWithRange:range];
 		aRangeView.left = lastPositionOfRange;
-		aRangeView.width = range.value * kBarSizeWidth;
+		aRangeView.width = [(INIRange *)range value] * kBarSizeWidth;
 		aRangeView.height = kBarSizeHeight;
 		aRangeView.backgroundColor = [UIColor clearColor];
 		aRangeView.titleLabel.font = self.font;
@@ -144,6 +144,15 @@ static CGFloat const kHandleSizeHeight = 40.f;
 	return value;
 }
 
+- (id)minRepresentedRange
+{
+	INIRangeView *aLeftRangeView = [self ini_nearestRangeViewFromHandle:leftHandleView];
+	if (!aLeftRangeView) {
+		aLeftRangeView = currentMinRangeView;
+	}
+	return [aLeftRangeView range];
+}
+
 - (id)maxRepresentedValue
 {
 	INIRangeView *aRightRangeView = [self ini_nearestRangeViewFromHandle:rightHandleView];
@@ -152,6 +161,15 @@ static CGFloat const kHandleSizeHeight = 40.f;
 	}
 	id value = [aRightRangeView.range title];
 	return value;
+}
+
+- (id)maxRepresentedRange
+{
+	INIRangeView *aRightRangeView = [self ini_nearestRangeViewFromHandle:rightHandleView];
+	if (!aRightRangeView) {
+		aRightRangeView = currentMaxRangeView;
+	}
+	return [aRightRangeView range];
 }
 
 - (void)ini_keepNearestRangeFromHandles
