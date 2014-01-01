@@ -19,13 +19,15 @@
 		titleLabel.numberOfLines = 1;
 		titleLabel.text = _range.title;
 		titleLabel.textAlignment = NSTextAlignmentCenter;
-		titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
-		titleLabel.minimumScaleFactor = 0.5f;
+		titleLabel.baselineAdjustment = UIBaselineAdjustmentAlignCenters;
+		titleLabel.minimumScaleFactor = 0;
 		titleLabel.autoresizingMask = UIViewAutoresizingFlexibleWidth;
 		titleLabel.highlightedTextColor = [UIColor whiteColor];
+		titleLabel.backgroundColor = [UIColor clearColor];
 		titleLabel.adjustsFontSizeToFitWidth = YES;
 		_titleLabel = titleLabel;
 		[self addSubview:titleLabel];
+		[self setBackgroundColor:[UIColor clearColor]];
 	}
 	return self;
 }
