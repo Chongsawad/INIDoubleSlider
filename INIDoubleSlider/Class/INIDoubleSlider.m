@@ -16,6 +16,8 @@ static CGFloat const kDefaultBarSizeHeight = 26.0f;
 static CGFloat const kHandleSizeWidth = 20.f;
 static CGFloat const kHandleSizeHeight = 40.f;
 
+static CGFloat const kEpsilon = 0.0001f;
+
 @interface INIDoubleSlider() {
 	UIView *barView;
 	UIView *rangeView;
@@ -191,8 +193,8 @@ static CGFloat const kHandleSizeHeight = 40.f;
 - (void)ini_moveHandleToNearestRangeWithUpdateValue:(BOOL)forceUpdate
 {
 	[self ini_keepNearestRangeFromHandles];
-	CGFloat moveToMinValue = ((CGFloat)[currentMinRangeView left] / kBarSizeWidth);
-	CGFloat moveToMaxValue = ((CGFloat)[currentMaxRangeView right] / kBarSizeWidth);
+	CGFloat moveToMinValue = ((CGFloat)[currentMinRangeView left] / kBarSizeWidth) + kEpsilon;
+	CGFloat moveToMaxValue = ((CGFloat)[currentMaxRangeView right] / kBarSizeWidth) - kEpsilon;
 	if (!self.shouldSlideToNearestRange) {
 		moveToMinValue = leftHandleView.right / kBarSizeWidth;
 		moveToMaxValue = rightHandleView.left / kBarSizeWidth;
@@ -202,7 +204,7 @@ static CGFloat const kHandleSizeHeight = 40.f;
 	 * Detect same range
 	 */
 	if (moveToMaxValue - moveToMinValue <= 0) {
-		leftHandleView.right -= 0.001f;
+		leftHandleView.right -= kEpsilon;
 		currentMinRangeView = [self ini_nearestRangeViewFromHandle:leftHandleView];
 		moveToMinValue = ([currentMinRangeView left] / kBarSizeWidth);
 	}
