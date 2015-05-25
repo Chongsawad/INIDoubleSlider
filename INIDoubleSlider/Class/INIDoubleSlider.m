@@ -295,7 +295,7 @@ static CGFloat const kEpsilon = 0.0001f;
 
 - (void)ini_moveHandle:(UIView *)view toPosition:(CGPoint)pos
 {
-	CGPoint beforeChanged = view.origin;
+	CGPoint beforeChanged = view.viewOrigin;
 	if (isTrackingLeftHandle) {
 		view.right = pos.x;
 
@@ -303,7 +303,7 @@ static CGFloat const kEpsilon = 0.0001f;
 		view.left = pos.x;
 
 	} else {
-		view.origin = beforeChanged;
+		view.viewOrigin = beforeChanged;
 	}
 
 	[self ini_colisionMoveDetectAtPoint:pos
@@ -430,7 +430,7 @@ static CGFloat const kEpsilon = 0.0001f;
 	kBarSizeWidth = self.barSize.width > 0 ? self.barSize.width : kDefaultBarSizeWidth;;
 	kBarSizeHeight = self.barSize.height > 0 ? self.barSize.height : kDefaultBarSizeHeight;
 
-	barView.size = self.barSize;
+	barView.viewSize = self.barSize;
 	barView.center = CGPointMake(CGRectGetMidX(self.bounds), CGRectGetMidY(self.bounds));
 
 	leftHandleView.centerY = barView.middleY;
